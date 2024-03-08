@@ -1,0 +1,68 @@
+﻿@model Assingment.Models.Appointment
+
+<h2>Create Appointment</h2>
+
+<form asp-action="Create" class="create-appointment-form">
+    <div class="form-group">
+        <label asp-for="PatientId" class="form-label">Patient Id:</label>
+        <input asp-for="PatientId" class="form-control" />
+        <span asp-validation-for="PatientId" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="AppointmentDate" class="form-label">Appointment Date:</label>
+        <input asp-for="AppointmentDate" class="form-control" />
+        <span asp-validation-for="AppointmentDate" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="AppointmentTime" class="form-label">Appointment Time:</label>
+        <input asp-for="AppointmentTime" class="form-control" />
+        <span asp-validation-for="AppointmentTime" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Description" class="form-label">Description:</label>
+        <input asp-for="Description" class="form-control" />
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+
+    <br />
+
+    <div class="form-group">
+        <input type="submit" value="Create" class="btn btn-primary" />
+    </div>
+</form>
+
+<style>
+    .create-appointment-form {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    .form-label {
+        font-weight: bold;
+    }
+
+    .form-control {
+        border-color: #ced4da;
+        border-radius: 4px;
+    }
+
+    .text-danger {
+        color: #dc3545;
+        font-size: 14px;
+    }
+
+    .btn-primary {
+        background-color: teal;
+        border-color: teal;
+        color: white;
+        font-weight: bold;
+    }
+
+        .btn-primary:hover {
+            background-color: #008080;
+            border-color: #008080;
+        }
+</style>

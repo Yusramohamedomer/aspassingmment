@@ -1,0 +1,50 @@
+﻿@model List<Assingment.Models.Appointment>
+
+<h2>Appointments</h2>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Create New</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Patient ID
+            </th>
+            <th>
+                Appointment Date
+            </th>
+            <th>
+                Appointment Time
+            </th>
+            <th>
+                Description
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var appointment in Model)
+        {
+            <tr>
+                <td>
+                    @appointment.PatientId
+                </td>
+                <td>
+                    @appointment.AppointmentDate
+                </td>
+                <td>
+                    @appointment.AppointmentTime
+                </td>
+                <td>
+                    @appointment.Description
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@appointment.Id" class="btn btn-success">Edit</a> |
+                    <a asp-action="Delete" asp-route-id="@appointment.Id" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

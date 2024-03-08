@@ -1,0 +1,38 @@
+﻿
+<h3>Patients</h3>
+<br />
+<a class="btn btn-primary btn-green" asp-action="Create">New Patient</a>
+<br />
+<br />
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th style="width:25%">Name</th>
+            <th style="width:25%">Age</th>
+            <th style="width:25%">Email</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            int counter = 1;
+        }
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@counter</td>
+                <td>@item.Name</td>
+                <td>@item.Age</td>
+                <td>@item.Email</td>
+                <td>
+                    <a class="btn btn-success btn-chocolate" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                    <br />  <br />
+                    <a class="btn btn-danger btn-delete" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+            counter++;
+        }
+    </tbody>
+</table>
+<br />

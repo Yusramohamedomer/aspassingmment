@@ -1,0 +1,64 @@
+﻿@model Assingment.Models.LoginViewModel
+
+
+<style>
+    body {
+        background-color: pink;
+    }
+
+    .login-container {
+        margin-top: 100px;
+    }
+
+    .form-label {
+        color: black;
+        font-weight: bold;
+    }
+
+    .form-control {
+        border-radius: 5px;
+    }
+
+    .btn-primary {
+        background-color: #ff4081;
+        border-color: #ff4081;
+        color: white;
+        font-weight: bold;
+    }
+
+        .btn-primary:hover {
+            background-color: #f50057;
+            border-color: #f50057;
+        }
+
+    .error-message {
+        color: red;
+        font-size: 18px;
+        margin-top: 10px;
+    }
+</style>
+
+<div class="row login-container">
+    <div class="col-4"></div>
+    <div class="col-4">
+        <form method="post" asp-action="Login">
+            <div class="form-group">
+                <label class="form-label">Username</label>
+                <input class="form-control" asp-for="Username" required placeholder="Enter username" />
+            </div>
+            <div class="form-group">
+                <label class="form-label">Password</label>
+                <input class="form-control" asp-for="Password" required placeholder="Enter password" />
+            </div>
+
+            <br />
+            <br />
+            <input class="btn btn-primary" type="submit" value="Login" />
+            @if (!string.IsNullOrEmpty(ViewData["error"] as string))
+            {
+                <h3 class="error-message">@ViewData["error"]</h3>
+            }
+        </form>
+    </div>
+    <div class="col-4"></div>
+</div>
