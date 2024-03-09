@@ -1,10 +1,12 @@
 ﻿using Assingment.Models;
 using Assingment.Repository;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 
 namespace Assingment.Controllers
 {
+    [Authorize]
     public class EmployeeController : Controller
     {
         private readonly EmployeeRepository _employeeRepository;

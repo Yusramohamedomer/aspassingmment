@@ -1,9 +1,11 @@
 using Assingment.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
 namespace Assingment.Models
 {
+    [Authorize]
     public class ErrorViewModel
     {
         public string RequestId { get; set; }
